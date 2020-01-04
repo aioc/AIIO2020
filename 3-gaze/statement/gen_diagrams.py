@@ -86,7 +86,7 @@ for i in range(10):
     line.addLayer('flower' + str(i), 0.6 + i*0.4)
 
 
-g = Digraph(format='svg', engine='neato')
+g = Digraph(format='svg', engine='neato', body=["graph [ dpi = 300 ];"])
 drawCase(g, [2, 3, 6, 1, 2, 3], 'RRLLRL', [3, 3, 0, 0, 2, 0])
 line.setYOffset(-2.6)
 drawCase(g, [2, 3, 6, 1, 2, 3], 'RRLLRL', [1, 0, 5, 0, 0, 0], [5])

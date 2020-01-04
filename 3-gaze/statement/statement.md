@@ -3,6 +3,7 @@ date: July 14th 2016
 header-includes:
 - \usepackage{fancyhdr}
 - \usepackage{multicol}
+- \usepackage{svg}
 - \setlength{\textheight}{225mm}
 - \setlength{\textwidth}{150mm}
 - \setlength{\oddsidemargin}{6.6mm}
@@ -68,6 +69,7 @@ Subtask | Points | Additional constraints
 4 | 25 | $D = N$ and $X_i = i$, for all $i$. That is, the statues are demolished from left to right.
 5 | 19 | No further constraints apply.
 
+\newpage
 
 ## Input
 
@@ -115,6 +117,10 @@ RRLLRL
 4
 ```
 
+\newpage
+
 ## Explanation
 
-In sample input 1, the answer is al
+![Sample Case 1](sample1.pdf){ width=40% }
+
+![Sample Case 2](sample2.pdf){ width=60% }
