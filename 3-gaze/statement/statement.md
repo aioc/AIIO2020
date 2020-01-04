@@ -16,7 +16,7 @@ header-includes:
 - \renewcommand{\footrulewidth}{0.0pt}
 ---
 
-# Gaze
+# Purview
 
 Input File | Output File | Time Limit | Memory Limit
 --- | --- | --- | ---
@@ -29,17 +29,17 @@ from left to right.
 Each year, the locals plant flowers in front of some of the statues.
 For each statue, the locals can plant any non-negative integer number of flowers (including 0).
 
-Each statue is either facing to the left, or to the right. If the i-th statue is:
+Each statue is either facing to the left, or to the right. If the $i$-th statue is:
 
 * Facing to the left, then it is able to see any flowers in front of statues 1, 2, ..., $i-1$, $i$.
 * Facing to the right, then it is able to see any flowers in front of statues $i$, $i+1$, ..., $N-1$, $N$.
 
 Note that every statue is able to see the flowers in front of itself.
 
-The locals have determined that the i-th statue must have _at least_ $F_i$ flowers in front of it.
+The locals have determined that the $i$-th statue must be able to see _at least_ $F_i$ flowers.
 What is the fewest flowers that need to be planted to satisfy these requirements?
 
-Furthermore, in subtasks X and X, you must also handle $D$ _demolitions_.
+Furthermore, in subtasks 3, 4, and 5, you must also handle $D$ _demolitions_.
 The $i$-th demolition destroys statue $X_i$, meaning that:
 
 * You cannot plant any flowers in front of this statue, and
@@ -64,9 +64,9 @@ Subtask | Points | Additional constraints
 :---: | :---: | -------------------------------------------------------------
 1 | 18 | $D = 0$ and $N \leq 1000$ 
 2 | 18 | $D = 0$
-3 | 18 | Only right facing statues are demolished
-4 | 18 | $D = N$ and $X_i = i$, for all $i$. That is, the houses are demolished from left to right.
-5 | 28 | No further constraints apply.
+3 | 20 | Only right facing statues are demolished
+4 | 25 | $D = N$ and $X_i = i$, for all $i$. That is, the statues are demolished from left to right.
+5 | 19 | No further constraints apply.
 
 
 ## Input
@@ -79,53 +79,42 @@ Subtask | Points | Additional constraints
 
 ## Output
 
-The output should contain a single integer: the fewest dollars you have to spend to get from station $1$ to $V$.
+The output should contain $D+1$ lines.
+
+* The first line should contain a single integer: the fewest flowers that need to be planted before any demolitions.
+* $D$ lines should follow. The $i$-th of these lines should contain the fewest flowers that need to be planted after the
+  $i$-th demolition takes place.
 
 ## Sample Input 1
 ```
-6 5
-20
-2 1 5
-70
-2 2 1
-500
-4 6
-10
-5 4
+4 0
+RRLR
+5 1 2 1
+
 ```
 
 ## Sample Output 1
 ```
-600
+5
 ```
 
 ## Sample Input 2
 
 ```
-6 4
-30
-3 1 3 4
-100
-4 6 5 2 4
-10
-2 2 3
-40
-3 2 5 6
+6 2
+RRLLRL
+2 3 6 1 2 3
+5 3
 ```
 
 ## Sample Output 2
 
 ```
-70
+8
+6
+4
 ```
 
 ## Explanation
 
-In the first example, one path you can take is 1 -> 2 -> 4 -> 6, costing 70 + 30 + 500 = 600 dollars.
-This is the minimum possible.
-
-
-In the second example, one path you can take is 1 -> 2 -> 3 -> 6, costing 30 + 10 + 40 = 80 dollars.
-This is the minimum possible.
-Notice that when travelling from city 3 to 6, there are two grids you can use. You are free to choose the cheaper one.
-
+In sample input 1, the answer is al
