@@ -75,9 +75,9 @@ Subtask | Points | Additional constraints
 
 * The first line of input contains the two integers, $N$ and $D$.
 * The second line contains a string of $N$ characters.
-  The i-th character (starting from 1) in the string is `L` if the i-th statue faces left, otherwise it is `R` (the statue faces right).
-* The third line contains $N$ integers. The i-th integer (starting from 1) is $F_i$.
-* The fourth line contains $D$ integers. The i-th integer (starting from 1) is $X_i$.
+  The $i$-th character (starting from 1) in the string is `L` if the $i$-th statue faces left, otherwise it is `R` (the statue faces right).
+* The third line contains $N$ integers. The $i$-th integer (starting from 1) is $F_i$.
+* The fourth line contains $D$ integers. The $i$-th integer (starting from 1) is $X_i$.
 
 ## Output
 
