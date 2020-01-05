@@ -25,7 +25,7 @@ standard input | standard output | 1 second | 256 MiB
 There is a large grid containing $R$ rows (numbered 1 to $R$ from top to bottom)
 and $C$ columns (numbered from 1 to $C$ from left to right).
 
-Each square contains a robot. The robot in the $r$-th row and $c$-th square
+Each grid square contains a robot. The robot in the $r$-th row and $c$-th column
 has a _profit value_ of $P_{rc}$, which can be *negative*.
 
 Each robot has two connectors 90 degrees apart, which it can use to connect to up two other robots.
