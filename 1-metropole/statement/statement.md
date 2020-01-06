@@ -23,14 +23,14 @@ Input File | Output File | Time Limit | Memory Limit
 standard input | standard output | 1 second | 256 MiB
 
 Roads are a thing of the past in the futuristic city of Metropole.
-Instead, residents travel from station to station using _grids_.
+Instead, residents travel from station to station using _hypergrids_.
 
 The city consists of $V$ stations (numbered from 1 to $V$)
-that are connected by $G$ grids (numbered from 1 to $G$).
+that are connected by $H$ hypergrids (numbered from 1 to $H$).
 
-The i-th grid connects $S_i$ stations.
+The $i$-th hypergrid connects $S_i$ stations.
 If you are at any of those stations, you can pay $C_i$ dollars to travel
-to any of the other stations in that grid.
+to any of the other stations in that hypergrid.
 
 You are currently at station $1$.
 What is the fewest dollars you have to spend to get to station $V$?
@@ -39,29 +39,29 @@ What is the fewest dollars you have to spend to get to station $V$?
 
 For all subtasks, you are guaranteed that:
 
-* $1 \leq V \leq 100\,000$.
-* $1 \leq G \leq 100\,000$.
+* $2 \leq V \leq 100\,000$.
+* $1 \leq H \leq 100\,000$.
 * $1 \leq S_i \leq V$, for all i.
 * $1 \leq C_i \leq 100\,000$ for all i.
-* $S_1 + S_2 + ... + S_V \leq 300\,000$
+* $S_1 + S_2 + ... + S_H \leq 300\,000$
 
 Additional constraints for each subtask are given below.
 
 Subtask | Points | Additional constraints
 :---: | :---: | -------------------------------------------------------------
-1 | 12 | $S_i = 2$, for all i. That is, every grid connects exactly two cities.
-2 | 28 | $S_i \leq 4$, for all i. That is, every grid connects at most 4 cities.
-3 | 46 | $C_i = 1$, for all i. That is, every grid costs exactly 1 dollar to use.
+1 | 12 | $S_i = 2$, for all i. That is, every hypergrid connects exactly two cities.
+2 | 28 | $S_i \leq 4$, for all i. That is, every hypergrid connects at most 4 cities.
+3 | 46 | $C_i = 1$, for all i. That is, every hypergrid costs exactly 1 dollar to use.
 4 | 14 | No further constraints apply.
 
 ## Input
 
-The first line of input contains the two integers, $V$ and $G$.
+The first line of input contains the two integers, $V$ and $H$.
 
-Then, $G$ pairs of lines follow.
-The first line in the i-th pair contains the integer $C_i$.
-The second line in the i-th pair begins with $S_i$, followed by $S_i$ integers, describing the stations that the i-th grid connects.
-No city is listed more than once in each grid.
+Then, $H$ pairs of lines follow.
+The first line in the $i$-th pair contains the integer $C_i$.
+The second line in the $i$-th pair begins with $S_i$, followed by $S_i$ integers, describing the stations that the $i$-th hypergrid connects.
+No city is listed more than once in each hypergrid.
 
 ## Output
 
@@ -79,6 +79,7 @@ The output should contain a single integer: the fewest dollars you have to spend
 10
 2 5 4
 30
+2 2 4
 ```
 
 ## Sample Output 1
@@ -108,12 +109,12 @@ The output should contain a single integer: the fewest dollars you have to spend
 
 ## Explanation
 
-In sample case 1, one path you can take is 1 $\rightarrow$ 2 $\rightarrow$ 4 $\rightarrow$ 6, costing 70 + 30 + 500 = 600 dollars.
+In sample case 1, one path you can take is 1 $\rightarrow$ 5 $\rightarrow$ 4 $\rightarrow$ 6, costing 20 + 10 + 500 = 530 dollars.
 This is the minimum possible.
 
 
 In sample case 2, one path you can take is 1 $\rightarrow$ 3 $\rightarrow$ 2 $\rightarrow$ 6, costing 30 + 10 + 40 = 80 dollars.
 This is the minimum possible.
-Notice that when travelling from city 3 to 6, there are two grids you can use. You are free to choose the cheaper one.
+Notice that when travelling from city 2 to 6, there are two hypergrids you can use. You are free to choose the cheaper one.
 
 ![Diagrams for the two sample cases](sample.pdf)

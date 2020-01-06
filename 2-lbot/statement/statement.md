@@ -22,7 +22,7 @@ Input File | Output File | Time Limit | Memory Limit
 --- | --- | --- | ---
 standard input | standard output | 1 second | 256 MiB
 
-There is a large grid containing $R$ rows (numbered 1 to $R$ from top to bottom)
+There is a large grid containing $R$ rows (numbered from 1 to $R$ from top to bottom)
 and $C$ columns (numbered from 1 to $C$ from left to right).
 
 Each grid square contains a robot. The robot in the $r$-th row and $c$-th column

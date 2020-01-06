@@ -10,7 +10,7 @@ header-includes:
 - \setlength{\evensidemargin}{6.6mm}
 - \setlength{\topmargin}{-5.4mm}
 - \pagestyle{fancy}
-- \lhead{\textsl{AIIO 2020 --- Gaze}}
+- \lhead{\textsl{AIIO 2020 --- Purview}}
 - \rhead{\thepage}
 - \cfoot{}
 - \renewcommand{\headrulewidth}{0.0pt}
@@ -24,11 +24,11 @@ Input File | Output File | Time Limit | Memory Limit
 standard input | standard output | 1 second | 256 MiB
 
 There are $N$ statues lined up along the shoreline of a sparesely inhabited
-polynesian island. The local residents have endearingly named them from 1 to $N$, going
+Polynesian island. The local residents have endearingly named them from 1 to $N$, going
 from left to right.
 
 Each year, the locals plant flowers in front of some of the statues.
-For each statue, the locals can plant any non-negative integer number of flowers (including 0).
+In front of each statue, the locals can plant any non-negative integer number of flowers (including 0).
 
 Each statue is either facing to the left, or to the right. If the $i$-th statue is:
 
@@ -46,7 +46,7 @@ The $i$-th demolition destroys statue $X_i$, meaning that:
 * You cannot plant any flowers in front of this statue, and
 * this statue _does not_ need to see at least $F_i$ flowers anymore.
 
-The demolitions cause all the flowers that have been planted already to disappear.
+All flowers on the island disappear after each demolition.
 After each demolition, what is the fewest flowers that now need to be planted to satisfy these requirements?
 
 ## Subtasks and Constraints
