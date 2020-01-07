@@ -55,7 +55,7 @@ Subtask | Points | Additional constraints
 1 | 35 | $R, C \leq 3$
 2 | 15 | $R = 1$
 3 | 20 | $R = 2$
-4 | 22 | $R = 3$
+4 | 22 | $0 < P_{ij}$, for all i and j. That is, all profit values are positive.
 5 | 8  | No further constraints apply.
 
 \newpage
