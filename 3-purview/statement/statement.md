@@ -55,8 +55,8 @@ For all subtasks, you are guaranteed that:
 
 * $1 \leq N \leq 100\,000$.
 * $0 \leq D \leq N$.
-* $1 \leq F_i \leq 1\,000\,000\,000$, for all i.
-* $1 \leq X_i \leq N$ for all i.
+* $1 \leq F_i \leq 1\,000\,000\,000$, for all $i$.
+* $1 \leq X_i \leq N$ for all $i$.
 * Each statue is demolished at most once.
 
 Additional constraints for each subtask are given below.

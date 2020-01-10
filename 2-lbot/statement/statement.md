@@ -46,7 +46,7 @@ What is the maximum number of dollars the robots can make if you rotate them opt
 For all subtasks, you are guaranteed that:
 
 * $1 \leq R, C \leq 1\,000$.
-* $-1\,000 \leq P_{ij} \leq 1\,000$, for all i and j.
+* $-1\,000 \leq P_{ij} \leq 1\,000$, for all $i$ and $j$.
 
 Additional constraints for each subtask are given below.
 
@@ -55,7 +55,7 @@ Subtask | Points | Additional constraints
 1 | 35 | $R, C \leq 3$
 2 | 15 | $R = 1$
 3 | 20 | $R = 2$
-4 | 22 | $0 < P_{ij}$, for all i and j. That is, all profit values are positive.
+4 | 22 | $0 < P_{ij}$, for all $i$ and $j$. That is, all profit values are positive.
 5 | 8  | No further constraints apply.
 
 \newpage

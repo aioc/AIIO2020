@@ -41,17 +41,17 @@ For all subtasks, you are guaranteed that:
 
 * $2 \leq V \leq 100\,000$.
 * $1 \leq H \leq 100\,000$.
-* $1 \leq S_i \leq V$, for all i.
-* $1 \leq C_i \leq 100\,000$ for all i.
+* $1 \leq S_i \leq V$, for all $i$.
+* $1 \leq C_i \leq 100\,000$ for all $i$.
 * $S_1 + S_2 + ... + S_H \leq 300\,000$
 
 Additional constraints for each subtask are given below.
 
 Subtask | Points | Additional constraints
 :---: | :---: | -------------------------------------------------------------
-1 | 12 | $S_i = 2$, for all i. That is, every hypergrid connects exactly two cities.
-2 | 28 | $S_i \leq 4$, for all i. That is, every hypergrid connects at most 4 cities.
-3 | 46 | $C_i = 1$, for all i. That is, every hypergrid costs exactly 1 dollar to use.
+1 | 12 | $S_i = 2$, for all $i$. That is, every hypergrid connects exactly two cities.
+2 | 28 | $S_i \leq 4$, for all $i$. That is, every hypergrid connects at most 4 cities.
+3 | 46 | $C_i = 1$, for all $i$. That is, every hypergrid costs exactly 1 dollar to use.
 4 | 14 | No further constraints apply.
 
 ## Input
