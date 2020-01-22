@@ -34,6 +34,7 @@ to any of the other stations in that hypergrid.
 
 You are currently at station $1$.
 What is the fewest dollars you have to spend to get to station $V$?
+You are guaranteed that it is possible to get from station $1$ to station $V$.
 
 ## Subtasks and Constraints
 
@@ -84,7 +85,7 @@ The output should contain a single integer: the fewest dollars you have to spend
 
 ## Sample Output 1
 ```
-600
+530
 ```
 
 ## Sample Input 2
@@ -104,8 +105,10 @@ The output should contain a single integer: the fewest dollars you have to spend
 ## Sample Output 2
 
 ```
-70
+80
 ```
+
+\newpage
 
 ## Explanation
 

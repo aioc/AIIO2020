@@ -28,12 +28,12 @@ and $C$ columns (numbered from 1 to $C$ from left to right).
 Each grid square contains a robot. The robot in the $r$-th row and $c$-th column
 has a _profit value_ of $P_{rc}$, which can be *negative*.
 
-Each robot has two connectors 90 degrees apart, which it can use to connect to up two other robots.
+Each robot has two connectors 90 degrees apart, which it can use to connect to up to two other robots.
 This allows the robot to be rotated one of four different ways:
 
 ![The four ways of arranging the bots](fourbots.pdf)
 
-If two adjacent robots are pointing one of their connectors at each other, then they will form a _pair_,
+If two adjacent robots are both pointing one of their connectors at each other, then they will form a _pair_,
 and make you a number of dollars equal to the sum of their profit values. If the sum of profit values would
 be _negative_, then the robots will make you 0 dollars instead.
 

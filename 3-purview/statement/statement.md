@@ -23,7 +23,7 @@ Input File | Output File | Time Limit | Memory Limit
 --- | --- | --- | ---
 standard input | standard output | 1 second | 256 MiB
 
-There are $N$ statues lined up along the shoreline of a sparesely inhabited
+There are $N$ statues lined up along the shoreline of a sparsely inhabited
 Polynesian island. The local residents have endearingly named them from 1 to $N$, going
 from left to right.
 
@@ -114,7 +114,7 @@ RRLLRL
 ```
 8
 6
-4
+3
 ```
 
 \newpage
