@@ -1,0 +1,81 @@
+Subtask 1: R, C <= 3
+--------------------
+
+1x1 case:
+    * 2
+
+1xN cases:
+    * 10 15
+    * -10 12
+    * -15 10
+    * -10 105 -20
+    * 15 20 25
+
+2x1 cases: copy 1x2 cases
+
+2x2 cases:
+    * -3 10
+      10 -3
+    * 15 -100
+      14 13
+    * -5 10
+      15 20
+    * -5 3
+      7 -8
+    * -5 -2
+      10 -8
+
+2x3 cases:
+    * -10  30 -10
+       30 -25  30
+    * -2 -4 -6
+       4  4  4
+    * random all negative
+    * random all positive
+
+3x2 cases: copy 2x3 cases
+
+3x3 cases:
+    * -5 -3 -5
+      -1  5 -1
+      -5 -3 -5
+    * -5 -3 -5
+      -1  2 -1
+      -5 -3 -5
+    * all negative, random
+    * all positive, random
+    * all random
+    * all max value
+
+
+Subtask 2: R = 1
+----------------
+
+Take Sub 4/5 cases and truncate them to only the first row
+
+Subtask 3: R = 2
+----------------
+
+Take Sub 4/5 cases and truncate them to only the first two rows
+
+Subtask 4:
+----------
+
+- max_size  , P_ij = i for all i, j (equal rows)
+- max_size-1, P_ij = j for all i, j (equal columns)
+
+- max size-1, random positive
+
+- max R  , max C-1, Random in range [0, 10]
+- max R-1, max C  , Random in range [0, 10]
+
+- max size  , max values
+
+Subtask 5:
+----------
+
+- max size, random
+- max size, random negative
+- Odd row random negatives, even row random positives
+- Checkerboard with random positives/random negatives
+
