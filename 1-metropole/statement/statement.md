@@ -75,7 +75,7 @@ The output should contain a single integer: the fewest dollars you have to spend
 2 1 5
 70
 2 2 1
-500
+5000
 2 4 6
 10
 2 5 4
@@ -85,14 +85,14 @@ The output should contain a single integer: the fewest dollars you have to spend
 
 ## Sample Output 1
 ```
-530
+5030
 ```
 
 ## Sample Input 2
 
 ```
 6 4
-30
+30000
 3 1 3 4
 100
 4 6 5 2 4
@@ -105,18 +105,18 @@ The output should contain a single integer: the fewest dollars you have to spend
 ## Sample Output 2
 
 ```
-80
+30050
 ```
 
 \newpage
 
 ## Explanation
 
-In sample case 1, one path you can take is 1 $\rightarrow$ 5 $\rightarrow$ 4 $\rightarrow$ 6, costing 20 + 10 + 500 = 530 dollars.
+In sample case 1, one path you can take is 1 $\rightarrow$ 5 $\rightarrow$ 4 $\rightarrow$ 6, costing 20 + 10 + 5000 = 5030 dollars.
 This is the minimum possible.
 
 
-In sample case 2, one path you can take is 1 $\rightarrow$ 3 $\rightarrow$ 2 $\rightarrow$ 6, costing 30 + 10 + 40 = 80 dollars.
+In sample case 2, one path you can take is 1 $\rightarrow$ 3 $\rightarrow$ 2 $\rightarrow$ 6, costing 30000 + 10 + 40 = 80 dollars.
 This is the minimum possible.
 Notice that when travelling from city 2 to 6, there are two hypergrids you can use. You are free to choose the cheaper one.
 
