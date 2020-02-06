@@ -4,15 +4,14 @@ For all cases, make sure to permute the vertices and edges.
 Subtask 1: S_i = 2
 -------------------
 Taken dijkstra data from https://github.com/KKMahogany/informatics_data/tree/master/dijkstra
-
-D1) Test minimal answer
-D2) Test maximal answer
-D3) Test priority_queue often being empty
-D4) Test maximum things in queue
-D5) Test expand on equality to minimum distance
-D6) Break "modifying" inserted items into the priority queue
-D7) Break "anti-reflexive" comparator
-D8) Test keep all multi-edges
+    - Test minimal answer
+    - Test maximal answer
+    - Test priority_queue often being empty
+    - Test maximum things in queue
+    - Test expand on equality to minimum distance
+    - Break "modifying" inserted items into the priority queue
+    - Break "anti-reflexive" comparator
+    - Test keep all multi-edges
 
 Some extra cases:
 
@@ -61,15 +60,15 @@ M3): V = 3, Have 5 hypergrids covering 1, 2 and 3 with random costs.
 
 G2-1): Interval_Graph(MAX_V, 4), random costs
 G2-2): Interval_Graph(MAX_V, 4), costs are increasing as i increases
-G2-3): Grid(sqrt MAX_V, sqrt MAX_V, 4), random costs
-G2-4): Take Grid(0.5sqrt MAX_V, 0.5sqrt MAX_V, 1, 4) and Grid(..., 4, 1) and overlay them on each other.
 
 R2-1 & R2-2): Random_Smart(MAX_V, 4, 3/4*MAX_H)
-R3-3): Random_Smart(MAX_V, 4, 3/4*MAX_H, 30)
+R2-3): Random_Smart(MAX_V, 4, 3/4*MAX_H, 30)
 
-RC1): Make 100 Random_Smart(MAX_V/100, 4, MAX_H/100), and join them together by making the end
+J1): Make 100 Random_Smart(MAX_V/100, 4, MAX_H/100), and join them together by making the end
       station of one copy to be the start station of the next copy
 
+S2-1): Grid(sqrt MAX_V, sqrt MAX_V, 4), random costs
+S2-overlay): Take Grid(0.5sqrt MAX_V, 0.5sqrt MAX_V, 1, 4) and Grid(..., 4, 1) and overlay them on each other.
 
 -------------------
 Subtask 3: C_i = 1
@@ -83,14 +82,13 @@ Subtask 4: Full
 
 G4-1): Interval_Graph(MAX_V, MAX_V-2), random costs
 G4-2): Interval_Graph(3*sqrtV, sqrtV), random costs
-G4-3): Interval_Graph(sqrtV, 3*sqrtV), random costs
-G4-4): Interval_Graph(MAX_V/10, 10), increasing costs
+G4-3): Interval_Graph(MAX_V/10, 10), increasing costs
 
 B1): Interval_Graph(MAX_V/10, 10), random costs in the range [1, 10], then add two hypergrids with max cost containing a
      random large subset of stations.
 
 R4-1): Random_Smart(MAX_V/2, 30, MAX_H/30), random costs
 R4-2): Random_Smart(MAX_V, 10000, MAX_H/10000), random costs
-R4-3): Random_Smart(MAX_V, [2, 1e5], MAX_H/10), random costs
+R4-3): Random_Smart(MAX_V, [2, 1e4], 100), random costs
 R4-4): Random_Smart(MAX_V, 30, MAX_H/30, 100), random costs
 

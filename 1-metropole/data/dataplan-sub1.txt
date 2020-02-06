@@ -1,0 +1,206 @@
+** Dijkstra data!
+** This document describes a bunch of test cases for dijkstra's algorithm
+** Let V be the number of vertices and E be the number of edges.
+** Vertices are labelled 1..V, with 1 being the start and V being the end
+**
+** Test cases will be restricted so that:
+** - Edges are UNDIRECTED
+** - Graph is SIMPLE (no multiedges)
+** - 1 <= V <= MAX_V and 1 <= E <= MAX_E
+** - 1 and V are DEFINITELY connected
+** - Edge weights are in the range [0, MAX_W]
+**
+** This was designed with MAX_V = MAX_E = MAX_W = 1e5 in mind
+**
+** It is important to check that your particular variant fits within these bounds
+** e.g. It may be necessary for you to have your own data that checks connectivity cases
+**      if you allow the start/end to be disconnected.
+** I might put some more test cases at the end for things outside the above restrictions
+**
+** Test cases will be written out in the form:
+** <BRIEF_DESCRIPTION_OF_WHAT_THE_TEST_CASE_BREAKS>
+** ------------------------------------------------
+** <NOTES_ON_PURPOSE_OF_TESTCASE>
+**
+** Construction: <EXPLICIT_DESCRIPTION_OF_CONSTRUCTION_IF_REQUIRED>
+**
+** Some test cases will use randomness in their generation.
+** TODO: Is it better to always generate a random instance, or to take one randomly
+** generated instance and use it everywhere?
+
+---
+----
+CORE TESTCASES
+----
+---
+These testcases exist to break a particular thingy
+
+Test minimal answer
+-------------------
+Minimal case to check for shoddy special handling of either the start or the end.
+
+Construction: Two vertices connected by an edge of weight 0.
+
+
+Test one edge, random weight
+----------------------------
+The goal of this is much like the minimal answer case, but it may be that bugs of this nature will
+get the program to print 0. So we need a case with non-zero answer.
+
+Construction: Two vertices connected by an edge of random weight.
+
+
+Test maximal answer
+-------------------
+Case with the maximal possible answer, to make sure that the infinity value has been set high enough,
+and long long values have been used if needed.
+
+Construction:
+MAX_V vertices in a line, connected by MAX_E-1 edges of weight MAX_W (start at the very left, end at the very right)
+(Answer will be (MAX_E-1)*(MAX_W))
+
+
+Test priority_queue often being empty
+-------------------------------------
+Unusual implementations may break when the queue is empty, so we have this case.
+
+Construction:
+  o   o         o
+ / \ / \       / \
+S   o   o ... o   E
+ \ / \ /       \ /
+  o   o         o
+
+In each diamond, the two edges on the left side should have high weights, whilte the two edges on the right should have
+low weights. Left edges having weight in the range [MAX_W/2+1, MAX_W] and right edges [0, MAX_W/2] should do (rounding
+down).
+
+Test maximum things in queue
+----------------------------
+We would like to construct a case that uses as much memory as possible.
+This also serves double duty to construct the worst running time (if we are careful to work around early exit).
+
+Construction:
+If MAX_E <= MAX_V-1, then we can simply have a star graph with the start at the center.
+Make sure that the edge to the end vertex has the largest weight.
+
+If there are more edges than vertices:
+Create a set S of MAX_E/MAX_V vertices connected to the start with edges of weight 0.
+Connect each of these vertices to all the other vertices not in S, with large weights.
+Make sure that the edge to the end vertex has the largest weight.
+
+
+Test expand on equality to minimum distance
+-------------------------------------------
+Instead of expanding on not being seen, you can expand only if the distance pushed into the priority queue
+is equal to the minimum distance recorded. This can be slow when the same minimum distance is pushed into
+the priority queue a lot. (I'm not sure if this is really a common bug, but it appeared in the APIO once)
+
+Construction:
+(All edges have weight 0)
+Create sets of vertices S_1, S_2, S_3, ... , S_k.
+Join start to all vertices in S_1.
+Join end   to all vertices in S_k.
+
+Randomly add edges from random vertices in different sets S_i, S_j where |j-i| = 1.
+k should be small enough to create a fairly dense graph (or indeed full).
+
+If you cannot have edges of weight 0, then setting it to 1 should also be a good pathological case.
+TODO: Is this statement actually true
+
+
+Break "modifying" inserted items into the priority queue
+--------------------------------------------------------
+Usually a dijkstra implementation includes a priority queue that holds a pair of <vertex, distance>, with
+the comparator comparing the distance.
+
+An alternative incorrect implementation is to have a priority queue of vertices, which are compared on the distance in the
+dijkstra's distance array. This allows you to "update" the value of things in the priority queue by changing
+the distance array, as opposed to simply pushing on a new item. An implementation might update the distance
+array and also push on a new item, why not.
+
+This breaks the invariant the things in the priority_queue are constant, so we will try to get
+lots of updates to happen in a random fashion to trigger an error. Items can also be popped off in the wrong order.
+
+Construction:
+TODO: Make sure it breaks both variants:
+TODO: - Never push something already on the queue (should be easier to break)
+TODO: - Always push into the queue
+TODO: Make sure it breaks with "early exit" & "push only if better" optimisations
+
+Create a clique, connect vertices i and j with an edge of weight C*|i-j| + rand(-D, D), where C is some largish
+constant and D << C.
+
+Break "anti-reflexive" comparator
+---------------------------------
+Usually a dijkstra implementation includes a priority queue that holds a pair of <vertex, distance>, with
+the comparator comparing the distance. The comparator should be such that if the distances are the same, it returns
+false (or returns a comparison on vertex). A bad comparator will cause undefined behaviour.
+
+We try to construct a case with lots of things with the same distance, same vertex or both getting pushed into the
+queue.
+
+Construction:
+TODO: Check this actually breaks that thing
+TODO: Check breaks comparator: dist < dist, then vertex <= vertex
+Create sets of vertices S_1, S_2, S_3, ... , S_k.
+Join start to all vertices in S_1 with edge of weight 1.
+Join end   to all vertices in S_k with edge of weight 1.
+
+Randomly add edges from random vertices in different sets S_i, S_j where |j-i| = 1 or 2. Make the weight of such edges
+|j-i|. k should be small enough to create a fairly dense graph.
+
+
+---
+----
+Multi-edge cases
+----
+---
+Multiple edges between pairs of vertices is not usually interesting in a dijkstra, but such cases should exist to
+make sure that they are being handled properly
+
+
+Test keep all multi-edges
+-------------------------
+Some implementations (particularly with an adjacency matrix) will have a bug where a new edge
+read in with the same start/end will replace the previous one with the same start/end. This causes
+edges to be dropped.
+
+Construction: Line of vertices with start and end on opposite sides.
+Join adjacent vertices in the line with multiple edges (say 10) with random weights.
+Do also a case with two vertices with E edges between them, with random weights.
+
+
+---
+----
+Connectivity checking cases
+----
+---
+Remember it is not good enough to have a case that "tests" some feature of an algorithm. It must also ensure it gives
+the wrong answer. This is particularly tough for questions with boolean answers, as is sometimes the case with
+connectivity questions.
+Remember it is not good enough to have a case that "tests" some feature of an algorithm. It must also ensure it gives
+the wrong answer. This is particularly tough for questions with boolean answers, as is sometimes the case with
+connectivity questions.
+
+
+Test answer is exactly 1e9
+--------------------------
+Often people use INF = 1e9, so (if bounds are large enough) it is useful to have a case where the answer is exactly 1e9.
+Depending on how rigorous you want to be, you can have a case with INF = 2e9, 1e10, 1e11 etc.
+
+Construction: A line of vertices connected by edges whose weights sum to 1e9. May not be possible if MAX_V, MAX_E or
+MAX_D too small
+
+Test isolated start
+-------------------
+Start has no edges. The rest of the graph should be highly connected
+
+Test isolated end
+-----------------
+End has no edges. The rest of the graph should be highly connected
+
+Test isolated start/end
+-----------------------
+See above.
+
