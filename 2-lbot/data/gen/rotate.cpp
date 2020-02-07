@@ -13,8 +13,7 @@ int main() {
 	printf("%d %d\n", c, r);
 	for (int j = 0; j < c; j++) {
 		for (int i = 0; i < r; i++) {
-			printf("%d ", grid[i][j]);
+			printf("%d%c", grid[i][j], " \n"[i+1==r]);
 		}
-		printf("\n");
 	}
 }

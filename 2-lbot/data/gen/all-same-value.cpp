@@ -8,8 +8,7 @@ int main(int argc, char* argv[]) {
 	printf("%d %d\n", r, c);
 	for (int i = 0; i < r; i++) {
 		for (int j = 0; j < c; j++) {
-			printf("%d ", value);
+			printf("%d%c", value, " \n"[j+1==c]);
 		}
-		printf("\n");
 	}
 }
