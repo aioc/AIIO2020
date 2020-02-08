@@ -15,6 +15,13 @@ struct Hyperedge {
     Hyperedge(vector<int> _v, int _w): vertices{_v}, weight{_w} {}
     vector<int> vertices;
     int weight;
+
+    void printdebug() {
+        for(auto x: vertices) {
+            cout << x << " ";
+        }
+        cout << "\n";
+    }
 };
 
 class Graph {
@@ -93,6 +100,7 @@ public:
     
     void printGraph(string fileName) {
         ofstream out(fileName);
+        quickcheck();
         permute();
         shuffle();
         out << V << " " << e.size() << "\n";
@@ -127,6 +135,16 @@ public:
         random_shuffle(begin(e), end(e));
         for(auto& edge: e) {
             random_shuffle(begin(edge.vertices), end(edge.vertices));
+        }
+    }
+
+    void quickcheck() {
+        for(auto edge: e) {
+            assert(!edge.vertices.empty());
+            for(auto x: edge.vertices) {
+                //cerr << "Check " << x << "\n";
+                assert(1 <= x && x <= V);
+            }
         }
     }
 };
@@ -183,9 +201,10 @@ Graph randomSmart(int V, int minVertices, int maxVertices, int minH, int maxJump
     Graph g(V);
     //cerr << "Graph size is " << V << "\n";
     maxJump = min(maxJump, V);
+    //cerr << "Max jump is " << maxJump << "\n";
 
     vector<int> vStart;
-    for(int i = 2; i <= maxJump+1; i++) {
+    for(int i = 2; i <= maxJump; i++) {
         vStart.push_back(i);
     }
     for(int i = 0; i <= (int)log2(minH); i++) {
@@ -194,7 +213,7 @@ Graph randomSmart(int V, int minVertices, int maxVertices, int minH, int maxJump
     }
 
     vector<int> vEnd;
-    for(int i = V-1-maxJump+1; i <= V-1; i++) {
+    for(int i = V-maxJump+1; i <= V-1; i++) {
         vEnd.push_back(i);
     }
     for(int i = 0; i <= (int)log2(minH); i++) {
@@ -204,7 +223,7 @@ Graph randomSmart(int V, int minVertices, int maxVertices, int minH, int maxJump
 
     //cerr << g.e.size() << " < " << minH  << "\n";
     while((int)g.e.size() < minH) {
-        //if(g.e.size() % 1000 == 0) { cerr << "Got to " << g.e.size() << "\n";}
+        //if(g.e.size() % 1000 == 0) { //cerr << "Got to " << g.e.size() << "\n";}
         auto v = randomSamplePickInterval(2, V-1, maxJump, randint(minVertices, maxVertices));
         g.addEdge(v, randint(MIN_C, MAX_C));
     }
@@ -225,8 +244,10 @@ Graph randomSmart(int V, int minVertices, int maxVertices, int minH, int maxJump
 Graph randomSmartCombine(int verticesPerGraph, int verticesPerEdge, int edgesPerGraph, int maxJump, int numGraphs) {
     Graph g((verticesPerGraph-1)*numGraphs + 1);
     for(int i = 0; i < numGraphs; i++) {
+        //cerr << "Looking at graph " << i << "\n";
         Graph curG = randomSmart(verticesPerGraph, verticesPerEdge, verticesPerEdge, edgesPerGraph, maxJump);
-        curG.increment(max(0, i*verticesPerGraph-1));
+        curG.quickcheck();
+        curG.increment(max(0, i*(verticesPerGraph-1)));
         g.addGraph(curG);
     }
 

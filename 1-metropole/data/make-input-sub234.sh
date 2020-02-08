@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Compile generator
 cd gen/
