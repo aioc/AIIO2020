@@ -1,0 +1,23 @@
+[
+  [
+    12,
+    "^(break-modify-insert|max-things-in-queue|triangle-1|test-maximal-answer|break-anti-reflexive|test-one-edge-random-weight|break-multi-edges-2|break-expand-on-equality|sample1|queue-empty-a-lot|test-minimal-answer|break-multi-edges-1|triangle-2)$",
+    "Subtask 1"
+  ],
+  [
+    28,
+    "^(sub3-S2-overlay|break-modify-insert|max-things-in-queue|J1|R2-3|triangle-1|test-maximal-answer|sub3-J1|S2-overlay|M3|G2-2|break-anti-reflexive|R2-2|sub3-S2-1|test-one-edge-random-weight|S2-1|sub3-G2-1|M2|sample2|break-multi-edges-2|sub3-R2-2|break-expand-on-equality|M1|sub3-G2-2|sample1|G2-1|sub3-R2-3|sub3-R2-1|queue-empty-a-lot|R2-1|test-minimal-answer|break-multi-edges-1|triangle-2)$",
+    "Subtask 2"
+  ],
+  [
+    46,
+    "^(sub3-S2-overlay|sub3-R4-3|sub3-R4-2|sub3-G4-1|sub3-R4-4|sub3-J1|sub3-S2-1|sub3-B1|sub3-G2-1|sub3-R2-2|break-expand-on-equality|sub3-G2-2|sub3-G4-3|sub3-G4-2|sub3-R2-3|sub3-R2-1|sub3-R4-1|test-minimal-answer)$",
+    "Subtask 3"
+  ],
+  [
+    14,
+    "^(sub3-S2-overlay|sub3-R4-3|break-modify-insert|max-things-in-queue|sub3-R4-2|sub3-G4-1|J1|sub3-R4-4|R2-3|triangle-1|test-maximal-answer|sub3-J1|R4-4|S2-overlay|M3|G4-3|R4-2|G2-2|break-anti-reflexive|R2-2|sub3-S2-1|test-one-edge-random-weight|sub3-B1|S2-1|sub3-G2-1|M2|sample2|break-multi-edges-2|sub3-R2-2|break-expand-on-equality|B1|R4-1|M1|G4-2|sub3-G2-2|sample1|R4-3|sub3-G4-3|G2-1|sub3-G4-2|sub3-R2-3|sub3-R2-1|sub3-R4-1|queue-empty-a-lot|R2-1|G4-1|test-minimal-answer|break-multi-edges-1|triangle-2)$",
+    "Subtask 4"
+  ]
+]
+
