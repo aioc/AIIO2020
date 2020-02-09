@@ -2,6 +2,6 @@
 #include "bounds.h"
 
 int main() {
-    validate(2, SUB1_N, MIN_P, MAX_P);
+    validate(2, MAX_N, MIN_P, MAX_P);
     return 0;
 }
