@@ -1,10 +1,10 @@
 R/L facing statue patterns:
     Alternating-L : LRLRLRLR...
     Alternating-R : RLRLRLRL...
-    L-Then-R      : LLLLLL...LRRRRR...R
-    R-Then-L      : RRRRRR...RLLLLL...L
+    L-Then-R      : LLLLLL...LRRRRR...R (i.e. pointout)
+    R-Then-L      : RRRRRR...RLLLLL...L (i.e. pointin)
     RandomHalf    : random.shuffle([L]*MAX_N/2 + [R]*MAX_N/2)
-    Circle        : MAX_N statues. The i-th statue ls R facing with probability i/MAX_N (otherwise it is L).
+    Circle        : MAX_N statues. The i-th statue ls L facing with probability i/MAX_N (otherwise it is L).
 
 Quota Patterns:
     Random            : [random.choice(1, MAX_F)]
@@ -21,19 +21,20 @@ Handmade cases:
 
 3 cases with N = 6 and statues face RLRLRL.
 Flower quotas are:
-    * 9+101 3 6+100 6 3+100 9
-    * 9+100 3 6+101 6 3+100 9
-    * 9+100 3 6+100 6 3+101 9
+    H1) 9+101 3 6+100 6 3+100 9
+    H2) 9+100 3 6+101 6 3+100 9
+    H3) 9+100 3 6+100 6 3+101 9
 
 Min cases:
-    * N = 1, statue faces L
-    * N = 1, statue faces R
+    H4) N = 1, statue faces L
+    H5 N = 1, statue faces R
 
-Max answer: N = 2, statues face LR, flower quota is [1e9, 1e9].
+Max answer:
+    H6) N = 2, statues face LR, flower quota is [1e9, 1e9].
 
 Domination:
-    * RLLLL, [100, 90, 3, 55, 99, 6]
-    * RRRRL, [80, 5, 23, 99, 100]
+    H7) RLLLLL, [100, 90, 3, 55, 99, 6]
+    H8) RRRRL, [80, 5, 23, 99, 100]
 
 For Sub 2, generate the Sub 5 cases, and remove all the deletions.
 For Sub 1, generate the Sub 5 cases, but with N = 1000, and remove all the deletions.
@@ -55,42 +56,42 @@ Take Sub 4 cases, and change the deletions so that they go from left to right.
 Subtask 5
 ---------
 
-sub5-RL) 
+order-RL) 
     R-Then-L, R's Random descending, L's Random ascending.
     Then, pick 0.01*MAX_N random statues and halve their F_i.
     Then demolish from highest to lowest F_i.
-sub5-LR)
-    Like sub5-RL, but L-Then-R instead.
+order-LR)
+    Like RL, but L-Then-R instead.
 
 
-sub5-circle)
+circle)
     Circle, R's Random descending, L's Random ascending.
     Demolish in the order 1, N, 2, N-1, 3, N-2, ...
     (The goal of this case is to make the critical statue somewhere in the middle
     for most of the answers)
 
-sub5-circle-flat)
-    Like sub5-circle, but values are in the range [1, 10] only.
+circle-flat)
+    Like circle, but values are in the range [1, 10] only.
 
-sub5-valley-1)
+valley-1)
     Alternating-L, L's Valley, R's Valley.
     Demolish the ascending portions of the valleys first, in ascending order of F
     then demlosih the descending portions of the valleys in any order
 
-sub5-valley-2)
+valley-2)
     Same as valley 1, but swap ascending/descending in the description of the demolition order
 
-sub5-descending)
+descending-special)
     RandomHalf, R's descending, L's ascending.
     But, take the last R and the first L (i.e. the ones with the smallest F)
     and set their F to MAX_F.
 
-sub5-random)
+random)
     RandomHalf, L's random, R's random.
 
-sub5-all-left)
+random-L)
     All Ls, Random values. Delete randomly
 
-sub5-all-right)
+random-R)
     Like all-left, but R instead.
 
