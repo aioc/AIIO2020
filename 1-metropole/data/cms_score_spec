@@ -1,4 +1,5 @@
 [
+  [0, "^(sample1|sample2)$", "Sample Cases"],
   [
     12,
     "^(break-modify-insert|max-things-in-queue|triangle-1|test-maximal-answer|break-anti-reflexive|test-one-edge-random-weight|break-multi-edges-2|break-expand-on-equality|sample1|queue-empty-a-lot|test-minimal-answer|break-multi-edges-1|triangle-2)$",
