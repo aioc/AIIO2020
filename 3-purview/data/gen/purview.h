@@ -45,7 +45,7 @@ struct Testcase {
     }
 
     void demolishRandom() {
-        demolitions = randpermutation(0, statues.size());
+        demolitions = randpermutation(0, statues.size()-1);
     }
 
     void demolishValleySpecial(bool rev) {
@@ -105,6 +105,7 @@ struct Testcase {
             first = false;
             out << x+1; // Change from 0-index to 1-index for output.
         }
+        out << "\n";
     }
 };
 
