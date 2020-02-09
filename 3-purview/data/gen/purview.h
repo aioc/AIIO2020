@@ -75,6 +75,34 @@ struct Testcase {
             }
         }
     }
+
+    void printCases(string filename) {
+        // If N is small, it must be for sub1.
+        if(statues.size() == SMALL_N) {
+            demolitions.clear();
+            printCase("sub1-" + filename);
+            return;
+        }
+        printCase("sub5-" + filename);
+
+        vector<int> onlyRightDemolitions;
+        for(auto x: demolitions) {
+            if(statues[x].dir == 'R') {
+                onlyRightDemolitions.push_back(x);
+            }
+        }
+        demolitions = onlyRightDemolitions;
+        printCase("sub3-" + filename);
+
+        demolitions.clear();
+        for(int i = 0; i < (int)(statues.size())-1; i++) {
+            demolitions.push_back(i);
+        }
+        printCase("sub4-" + filename);
+
+        demolitions.clear();
+        printCase("sub2-" + filename);
+    }
     
     void printCase(string filename) {
         ofstream out(filename);
