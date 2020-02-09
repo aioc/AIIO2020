@@ -32,17 +32,26 @@ struct rangetree {
         if(l == 1 && r == N) {
             //cerr << "Range " << ql << " " << qr <<" At " << l << " " << r << " dv: " << dv << "(" << dv - INF << ")\n";
         }
+        if(l == 5 && r == 5) {
+            //cerr << "Maxv at leaf 5 WAS " << maxv << " (" << -dv+INF << ")\n";
+        }
         pushDirty();
         if(qr < l || r < ql) {
             return;
         } else if(ql <= l && r <= qr) {
             dirty += dv;
             maxv += dv;
-            //cerr << "Maxv is now " << maxv << "\n";
         } else {
             lc->addToRange(ql, qr, dv);
             rc->addToRange(ql, qr, dv);
             maxv = max(lc->maxv, rc->maxv);
+        }
+        if(l == 1 && r == N) {
+            //cerr << "Maxv is now " << maxv << "\n";
+            //cerr << "lc rc" << lc->maxv << " " << rc->maxv << "\n";
+        }
+        if(l == 5 && r == 5) {
+            //cerr << "Maxv at leaf 5 is " << maxv << "\n";
         }
     }
 
@@ -54,6 +63,8 @@ struct rangetree {
         if(!leaf()) {
             lc->maxv += dirty;
             rc->maxv += dirty;
+            lc->dirty += dirty;
+            rc->dirty += dirty;
         }
         dirty = 0;
     }
