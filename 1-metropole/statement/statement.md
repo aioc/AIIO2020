@@ -68,6 +68,8 @@ No city is listed more than once in each hypergrid.
 
 The output should contain a single integer: the fewest dollars you have to spend to get from station $1$ to $V$.
 
+**Note:** The answer can be quite large. Consider using `long long int`.
+
 ## Sample Input 1
 ```
 6 5
