@@ -25,7 +25,7 @@ int main() {
 
     randomSmartCombine(10, 4, 10000/4, INF_JUMP, 20).printGraphs("J1.in");
 
-    grid(SQRT_V, SQRT_V, 2, 2).printGraphs("S2-1.in");
+    grid(SQRT_V*0.85, SQRT_V*0.85, 2, 2).printGraphs("S2-1.in");
     gridOverlay(SQRT_V/2, SQRT_V/2, 4).printGraphs("S2-overlay.in");
     
     // Subtask 4 (C_i = 1)
@@ -38,5 +38,5 @@ int main() {
     randomSmart(MAX_V/2, 30, 30, MAX_H/30, MAX_V/2).printGraphs("R4-1.in");
     randomSmart(MAX_V, 10000, 10000, 3*MAX_H/10000, MAX_V).printGraphs("R4-2.in");
     randomSmart(MAX_V, 2, 10000, 50, MAX_V).printGraphs("R4-3.in");
-    randomSmart(MAX_V, 30, 30, MAX_H/30, 100).printGraphs("R4-4.in");
+    randomSmart(MAX_V, 30, 30, MAX_H/60, 500).printGraphs("R4-4.in");
 }

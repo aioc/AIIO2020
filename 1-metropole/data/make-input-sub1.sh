@@ -17,10 +17,10 @@ tho=$((10**3))
 DIJK_SEED=78462
 
 # Test minimal answer
-./gen-line 2 0 0 $((++DIJK_SEED)) > test-minimal-answer.in
+./gen-line 2 1 1 $((++DIJK_SEED)) > test-minimal-answer.in
 
 # Test one edge, random weight
-./gen-line 2 0 $hun $((++DIJK_SEED)) > test-one-edge-random-weight.in
+./gen-line 2 1 $hun $((++DIJK_SEED)) > test-one-edge-random-weight.in
 
 # Test maximal answer
 ./gen-line $tho $hun $hun $((++DIJK_SEED)) > test-maximal-answer.in
@@ -32,19 +32,19 @@ DIJK_SEED=78462
 ./gen-max-queue 1000 50000 1 $hun $((++DIJK_SEED)) > max-things-in-queue.in
 
 # Test expand on equality to minimum distance
-./gen-equality-breaker 1000 20 0 $hun $((++DIJK_SEED)) > break-expand-on-equality.in
+./gen-equality-breaker 1000 20 1 $hun $((++DIJK_SEED)) > break-expand-on-equality.in
 
 # Break "modifying" inserted intems into the priority queue
 ./gen-clique 1000 50000 100 10 $((++DIJK_SEED)) > break-modify-insert.in
 
 # Break anti-reflexive comparator
-./gen-anti 1000 50000 20 0 $hun $((++DIJK_SEED)) > break-anti-reflexive.in
+./gen-anti 1000 50000 20 1 $hun $((++DIJK_SEED)) > break-anti-reflexive.in
 
 # Break poor handling of multiedges 1
-./gen-multi-line 1000 50 0 $hun $((++DIJK_SEED)) > break-multi-edges-1.in
+./gen-multi-line 1000 50 1 $hun $((++DIJK_SEED)) > break-multi-edges-1.in
 
 # Break poor handling of multiedges 2
-./gen-multi-line 2 50000 0 $hun $((++DIJK_SEED)) > break-multi-edges-2.in
+./gen-multi-line 2 50000 1 $hun $((++DIJK_SEED)) > break-multi-edges-2.in
 
 cd ../gen/
 
