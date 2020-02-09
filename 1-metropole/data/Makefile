@@ -1,7 +1,7 @@
 
 .PHONY: all clean sub1 sub234 output check
 
-all: sub1 sub234 output check
+all: sub1 sub234 output check zip
 
 sub1:
 	./make-input-sub1.sh
@@ -15,6 +15,8 @@ output: sub1 sub234
 check: sub1 sub234
 	./run-validator.sh
 
+zip: output sub1 sub234 check
+	zip data.zip *.in *.out
 
 clean:
-	-rm *.in *.out gen-dijkstra/*.in
+	-rm *.in *.out gen-dijkstra/*.in data.zip
