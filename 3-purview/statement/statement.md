@@ -54,8 +54,8 @@ After each demolition, what is the fewest flowers that now need to be planted to
 For all subtasks, you are guaranteed that:
 
 * $1 \leq N \leq 100\,000$.
-* $0 \leq D \leq N$.
-* $1 \leq F_i \leq 1\,000\,000\,000$, for all $i$.
+* $0 \leq D < N$.
+* $1 \leq F_i \leq 1\,000\,000$, for all $i$.
 * $1 \leq X_i \leq N$ for all $i$.
 * Each statue is demolished at most once.
 
@@ -66,7 +66,7 @@ Subtask | Points | Additional constraints
 1 | 18 | $D = 0$ and $N \leq 1000$ 
 2 | 18 | $D = 0$
 3 | 20 | Only right facing statues are demolished
-4 | 25 | $D = N$ and $X_i = i$, for all $i$. That is, the statues are demolished from left to right.
+4 | 25 | $D = N - 1$ and $X_i = i$, for all $i$. That is, the statues are demolished from left to right (except the rightmost statue).
 5 | 19 | No further constraints apply.
 
 \newpage
