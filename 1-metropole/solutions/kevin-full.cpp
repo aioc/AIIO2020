@@ -3,24 +3,24 @@
 
 using namespace std;
 
-int N, G;
+long long int N, G;
 
-const int MAX_G = 1e6+5;
-const int MAX_N = 1e6+5;
-const int INF = 1e9;
+const long long int MAX_G = 1e6+5;
+const long long int MAX_N = 1e6+5;
+const long long int INF = 1e12;
 
 vector<int> grid[MAX_G];
 vector<int> adj[MAX_N];
-int cost[MAX_G];
+long long int cost[MAX_G];
 
-int dist[MAX_N];
+long long int dist[MAX_N];
 bool seen[MAX_N];
 
 bool gseen[MAX_N];
 
 struct state {
-    int at, d;
-    state(int _at, int _d) : at{_at}, d{_d} {}
+    long long int at, d;
+    state(long long int _at, long long int _d) : at{_at}, d{_d} {}
     bool operator<(const state& oth) const {
         return d > oth.d;
     }
@@ -28,22 +28,22 @@ struct state {
 
 int main() {
     cin >> N >> G;
-    for(int i = 1; i <= G; i++) {
-       int x;
+    for(long long int i = 1; i <= G; i++) {
+       long long int x;
 
        cin >> x;
        cost[i] = x;
 
        cin >> x;
-       for(int j = 1; j <= x; j++) {
-           int y;
+       for(long long int j = 1; j <= x; j++) {
+           long long int y;
            cin >> y;
            grid[i].push_back(y);
            adj[y].push_back(i);
        }
     }
 
-    for(int i = 2; i <= N; i++) {
+    for(long long int i = 2; i <= N; i++) {
         dist[i] = INF;
     }
 
