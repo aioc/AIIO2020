@@ -1,3 +1,5 @@
+.PHONY: all
+
 all: statement.pdf
 
 fourbots.svg sample1.svg sample2.svg sample3.svg: gen_diagrams.py
