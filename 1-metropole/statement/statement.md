@@ -98,7 +98,7 @@ The output should contain a single integer: the fewest dollars you have to spend
 3 1 3 4
 100
 4 6 5 2 4
-10
+90000
 2 2 3
 40
 3 2 5 6
