@@ -1,0 +1,29 @@
+[
+  [0, "^sample.$", "Sample Cases"],
+  [
+    35,
+    "^(2x1-3|3x1-2|2x3-posrand|1x2-3|3x3-posrand|2x2-4|3x2-1|1x3-2|3x3-2|sub3-3x3-max|sub3-3x3-negrand|3x2-2|sub3-3x2-posrand|2x3-negrand|3x3-negrand|sub2-3x3-posrand|sub3-3x3-posrand|1x2-1|2x1-2|2x3-2|1x3-1|sub2-3x3-max|3x2-posrand|sample2|sub3-3x3-rand|2x2-1|2x2-2|sub2-2x3-posrand|3x1-1|sub2-3x3-negrand|sub3-2x3-posrand|sub2-3x3-rand|3x3-max|sub3-2x3-negrand|sub2-3x2-negrand|sub3-3x2-negrand|2x3-1|2x2-5|sub2-2x3-negrand|1x2-2|sub2-3x2-posrand|2x2-3|sample3|3x2-negrand|3x3-1|1x1-1|2x1-1|3x3-rand)$",
+    "Subtask 1"
+  ],
+  [
+    15,
+    "^(sub2-negrand|sub2-rand-1to10-1|sub2-alternatingrows|1x2-3|1x3-2|sub2-checkerboard|sub2-fullmax|sub2-maxrand|sub2-3x3-posrand|1x2-1|1x3-1|sub2-posrand|sub2-3x3-max|sub2-rand-1to10-2|sub2-2x3-posrand|sub2-3x3-negrand|sub2-3x3-rand|sample1|sub2-3x2-negrand|sub2-horz-stripes|sub2-2x3-negrand|1x2-2|sub2-3x2-posrand|1x1-1|sub2-vert-stripes)$",
+    "Subtask 2"
+  ],
+  [
+    20,
+    "^(2x1-3|2x3-posrand|2x2-4|sub3-3x3-max|sub3-vert-stripes|sub3-3x3-negrand|sub3-3x2-posrand|2x3-negrand|sub3-rand-1to10-1|sub3-checkerboard|sub3-3x3-posrand|2x1-2|2x3-2|sub3-alternatingrows|sub3-rand-1to10-2|sample2|sub3-3x3-rand|2x2-1|2x2-2|sub3-negrand|sub3-posrand|sub3-2x3-posrand|sub3-2x3-negrand|sub3-horz-stripes|sub3-maxrand|sub3-3x2-negrand|2x3-1|2x2-5|sub3-fullmax|2x2-3|2x1-1)$",
+    "Subtask 3"
+  ],
+  [
+    22,
+    "^(sub2-rand-1to10-1|3x1-2|3x3-posrand|1x3-2|sub3-3x3-max|sub3-vert-stripes|sub2-fullmax|sub3-rand-1to10-1|sub2-3x3-posrand|fullmax|sub3-3x3-posrand|1x2-1|sub2-posrand|sub2-3x3-max|sub3-rand-1to10-2|posrand|sample2|sub2-rand-1to10-2|sub3-posrand|3x3-max|sub3-horz-stripes|rand-1to10-2|vert-stripes|rand-1to10-1|sub2-horz-stripes|sub3-fullmax|1x1-1|horz-stripes|2x1-1|sub2-vert-stripes)$",
+    "Subtask 4"
+  ],
+  [
+    8,
+    "^(sub2-negrand|2x1-3|sub2-rand-1to10-1|3x1-2|2x3-posrand|sub2-alternatingrows|1x2-3|3x3-posrand|2x2-4|3x2-1|1x3-2|3x3-2|sub3-3x3-max|sub3-vert-stripes|sub2-checkerboard|sub3-3x3-negrand|3x2-2|sub2-fullmax|sub2-maxrand|alternatingrows|sub3-3x2-posrand|2x3-negrand|3x3-negrand|sub3-rand-1to10-1|sub3-checkerboard|sub2-3x3-posrand|fullmax|sub3-3x3-posrand|1x2-1|checkerboard|2x1-2|2x3-2|1x3-1|egrand|sub2-posrand|sub2-3x3-max|3x2-posrand|sub3-alternatingrows|sub3-rand-1to10-2|posrand|sample2|sub3-3x3-rand|2x2-1|2x2-2|sub2-rand-1to10-2|sub2-2x3-posrand|3x1-1|sub3-negrand|sub2-3x3-negrand|sub3-posrand|sub3-2x3-posrand|sub2-3x3-rand|3x3-max|sub3-2x3-negrand|sample1|sub2-3x2-negrand|sub3-horz-stripes|sub3-maxrand|maxrand|sub3-3x2-negrand|2x3-1|rand-1to10-2|vert-stripes|rand-1to10-1|2x2-5|sub2-horz-stripes|sub2-2x3-negrand|sub3-fullmax|1x2-2|sub2-3x2-posrand|2x2-3|sample3|3x2-negrand|3x3-1|1x1-1|horz-stripes|2x1-1|sub2-vert-stripes|3x3-rand)$",
+    "Subtask 5"
+  ]
+]
+
